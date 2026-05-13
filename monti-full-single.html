@@ -1,0 +1,3250 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Modern restaurant menu concept for MONTI 1929 Dnipro."
+    />
+    <title>MONTI 1929 | Modern Menu</title>
+    <link rel="preconnect" href="https://img.postershop.me" />
+    <style>
+:root {
+  color-scheme: light;
+  --ink: #171512;
+  --muted: #6f6960;
+  --paper: #fffaf2;
+  --panel: #ffffff;
+  --line: #e7ded0;
+  --accent: #b21f24;
+  --accent-strong: #821418;
+  --herb: #47694d;
+  --gold: #d7aa56;
+  --shadow: 0 22px 60px rgba(32, 23, 12, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid rgba(255, 250, 242, 0.24);
+  background: rgba(23, 21, 18, 0.82);
+  color: #fffaf2;
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.nav,
+.phone,
+.button {
+  text-decoration: none;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid rgba(255, 250, 242, 0.18);
+  border-radius: 999px;
+}
+
+.nav a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: rgba(255, 250, 242, 0.84);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: rgba(255, 250, 242, 0.12);
+  color: #fff;
+}
+
+.phone {
+  justify-self: end;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero {
+  position: relative;
+  min-height: min(760px, calc(100vh - 74px));
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #171512;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(18, 15, 12, 0.92), rgba(18, 15, 12, 0.28)),
+    linear-gradient(0deg, rgba(18, 15, 12, 0.64), rgba(18, 15, 12, 0));
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(720px, calc(100% - 36px));
+  margin: 0 0 clamp(64px, 9vw, 116px) clamp(18px, 7vw, 96px);
+  color: #fffaf2;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2 {
+  margin: 0;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 10ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(58px, 12vw, 148px);
+  font-weight: 500;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 570px;
+  margin: 22px 0 0;
+  color: rgba(255, 250, 242, 0.85);
+  font-size: clamp(17px, 2vw, 22px);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.button.ghost {
+  border: 1px solid rgba(255, 250, 242, 0.5);
+  color: white;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-stats article {
+  display: grid;
+  gap: 4px;
+  padding: 22px clamp(18px, 4vw, 56px);
+  background: #fff;
+}
+
+.quick-stats strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+}
+
+.quick-stats span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: clamp(54px, 8vw, 96px) 0;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
+  gap: clamp(28px, 6vw, 88px);
+  align-items: end;
+}
+
+.section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 500;
+}
+
+.intro > p,
+.visit-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.menu-shell {
+  width: min(1280px, calc(100% - 24px));
+  padding-top: 42px;
+}
+
+.menu-heading {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 380px);
+  gap: 24px;
+  align-items: end;
+}
+
+.menu-count {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.search {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.search span {
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.category-bar {
+  position: sticky;
+  top: 75px;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  margin: 28px -12px 24px;
+  padding: 12px;
+  overflow-x: auto;
+  background: rgba(255, 250, 242, 0.9);
+  backdrop-filter: blur(14px);
+}
+
+.category-btn {
+  min-height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.category-btn.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dish-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 12px 34px rgba(36, 25, 14, 0.07);
+}
+
+.dish-card.featured {
+  grid-column: span 2;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dish-media {
+  position: relative;
+  min-height: 230px;
+  background: #eee2d0;
+}
+
+.dish-card.featured .dish-media {
+  min-height: 100%;
+}
+
+.dish-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  object-fit: cover;
+}
+
+.dish-placeholder {
+  display: grid;
+  min-height: 230px;
+  height: 100%;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(71, 105, 77, 0.16), rgba(178, 31, 36, 0.12)),
+    #f4eadb;
+  color: rgba(23, 21, 18, 0.34);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: 1;
+}
+
+.dish-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  max-width: calc(100% - 24px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(23, 21, 18, 0.78);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dish-body {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.dish-body h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.18;
+}
+
+.dish-body p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.dish-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.price {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.add-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--herb);
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 32px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.visit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: clamp(24px, 6vw, 76px);
+  align-items: start;
+}
+
+.visit-copy {
+  display: grid;
+  gap: 20px;
+}
+
+.order-panel {
+  position: sticky;
+  top: 112px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.order-panel-head,
+.cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+}
+
+.order-panel-head {
+  border-bottom: 1px solid var(--line);
+  font-weight: 900;
+}
+
+.order-panel-head button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cart-list {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.cart-item,
+.empty {
+  margin: 0;
+  padding: 14px 18px;
+  background: #fff;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.cart-item strong {
+  color: var(--ink);
+}
+
+.cart-total {
+  border-top: 1px solid var(--line);
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px clamp(18px, 4vw, 56px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+@media (max-width: 920px) {
+  .topbar,
+  .intro,
+  .menu-heading,
+  .visit {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .phone {
+    justify-self: start;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dish-card.featured {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+  }
+
+  .order-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    gap: 12px;
+  }
+
+  .brand span {
+    font-size: 14px;
+  }
+
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-copy {
+    margin: 0 auto 46px;
+  }
+
+  .hero-actions,
+  .footer {
+    flex-direction: column;
+  }
+
+  .quick-stats,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dish-card.featured {
+    grid-column: span 1;
+  }
+
+  .category-bar {
+    top: 123px;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="MONTI 1929 home">
+        <img
+          src="https://img.postershop.me/17690/44e14aa9-b407-49c1-b5cb-530c185e6016_image.jpeg"
+          alt=""
+        />
+        <span>MONTI 1929</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#menu">Меню</a>
+        <a href="#story">Про нас</a>
+        <a href="#visit">Візит</a>
+      </nav>
+      <a class="phone" href="tel:+380686343344">+38 (068) 634 33 44</a>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-label="MONTI 1929 restaurant introduction">
+        <img
+          class="hero-media"
+          src="https://img.postershop.me/17690/d3e59b91-18f9-4b5d-b927-8a456d0de477_image.jpeg"
+          alt="MONTI 1929 seasonal dishes"
+        />
+        <div class="hero-copy">
+          <p class="eyebrow">Дніпро • сучасна українська кухня</p>
+          <h1>MONTI 1929</h1>
+          <p>
+            Автентичні рецепти, локальні продукти та легкий міський ритм у
+            меню, яке приємно переглядати з телефону або за столиком.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#menu">Дивитись меню</a>
+            <a class="button ghost" href="#visit">Забронювати</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-stats" aria-label="Restaurant highlights">
+        <article>
+          <strong>18+</strong>
+          <span>розділів меню</span>
+        </article>
+        <article>
+          <strong>1929</strong>
+          <span>характер бренду</span>
+        </article>
+        <article>
+          <strong>10:00</strong>
+          <span>сніданки щодня</span>
+        </article>
+      </section>
+
+      <section class="section intro" id="story">
+        <div>
+          <p class="eyebrow">Нова подача</p>
+          <h2>Меню без зайвого шуму: швидко знайти, легко обрати.</h2>
+        </div>
+        <p>
+          Ця версія зберігає основний зміст оригінального сайту, але робить
+          досвід більш ресторанним: більші фото, ясна навігація по категоріях,
+          помітні ціни та компактне замовлення без перевантаження сторінки.
+        </p>
+      </section>
+
+      <section class="section menu-shell" id="menu">
+        <div class="menu-heading">
+          <div>
+            <p class="eyebrow">Меню</p>
+            <h2>Повне меню</h2>
+            <p class="menu-count" id="menuCount"></p>
+          </div>
+          <label class="search" aria-label="Search menu">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Пошук страви" />
+          </label>
+        </div>
+
+        <div class="category-bar" id="categoryBar" aria-label="Menu categories"></div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <section class="section visit" id="visit">
+        <div class="visit-copy">
+          <p class="eyebrow">Ресторан</p>
+          <h2>Плануйте вечерю, сніданок або келих вина після роботи.</h2>
+          <p>
+            Телефонуйте для бронювання або відкрийте меню за QR на столі. Для
+            демо-версії кнопки додавання збирають локальний кошик без оплати.
+          </p>
+        </div>
+        <aside class="order-panel" aria-live="polite">
+          <div class="order-panel-head">
+            <span>Ваш вибір</span>
+            <button id="clearCart" type="button">Очистити</button>
+          </div>
+          <div class="cart-list" id="cartList">
+            <p class="empty">Додайте улюблені позиції з меню.</p>
+          </div>
+          <div class="cart-total">
+            <span>Разом</span>
+            <strong id="cartTotal">0 грн</strong>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>MONTI 1929</span>
+      <span>Modern menu concept</span>
+    </footer>
+
+    <script>
+window.menuItems = [
+  {
+    "id": 6779928,
+    "name": "Сніданок \"Moнti1929\"",
+    "category": "Сніданки",
+    "price": 415,
+    "photo": "https://img.postershop.me/17690/150ee150-4a6a-4879-bead-fb3c3285cba5_image.jpeg",
+    "description": "Поживний сніданок з авокадо, яйцями пашот, гречаною кашею, бобами едамами, сезонними овочами, молодого аспарагусу та чіабатою з вершковим маслом",
+    "popular": true
+  },
+  {
+    "id": 5437902,
+    "name": "Сніданок \"Український\", 300г",
+    "category": "Сніданки",
+    "price": 244,
+    "photo": null,
+    "description": "Яєчня, домашні ковбаски з курячего або свино-яловичого фаршу, деруни, ікра бурякова, чіабатта з вершкоим маслом",
+    "popular": true
+  },
+  {
+    "id": 5436846,
+    "name": "Яйца пашот або яєчня або скрембл",
+    "category": "Сніданки",
+    "price": 168,
+    "photo": "https://img.postershop.me/17690/6e4bab70-5b1f-4678-9d3c-4fe069766134_image.jpeg",
+    "description": "На ваш вибір можна замовити яйця пашот, скрембл або яєчню з 2 яєць, подається з овочами та чіабаттою з вершковим маслом",
+    "popular": false
+  },
+  {
+    "id": 5455188,
+    "name": "Яйця пашот або яєчня або скрембл з фореллю власного посолу",
+    "category": "Сніданки",
+    "price": 274,
+    "photo": "https://img.postershop.me/17690/cfdf459d-6394-4eeb-9e0e-14316449bfea_image.jpeg",
+    "description": "Свіжайша форель власного посолу, томати, листя салату, 2 яйця, приготовлені на ваш вибір, хрустка чіабатта з вершковим маслом",
+    "popular": false
+  },
+  {
+    "id": 6139637,
+    "name": "Яйця пашот або яєчня або скрембл з ковбасками (на вибір)",
+    "category": "Сніданки",
+    "price": 197,
+    "photo": "https://img.postershop.me/17690/cd135e27-6340-461e-af72-33cd528e4c42_image.jpeg",
+    "description": "Апетитні домашні ковбаски з фаршу із свинини подаються з подаються з яйцами, зробеними на ваш вибір і хрустка чіабатта з вершковим маслом",
+    "popular": false
+  },
+  {
+    "id": 5195744,
+    "name": "Яєшня з шинкою, 265г",
+    "category": "Сніданки",
+    "price": 193,
+    "photo": "https://img.postershop.me/17690/7c0f96cb-3538-4b81-ac59-fc7c3bbdddba_image.jpeg",
+    "description": "Яєчня з 2-х яєць, тости з сиром чеддер, шинка, томат чері",
+    "popular": false
+  },
+  {
+    "id": 5528294,
+    "name": "Яйца Бенедикт з креветками та авокадо під голландським соусом, 450г",
+    "category": "Сніданки",
+    "price": 369,
+    "photo": "https://img.postershop.me/17690/2d18f7c6-afe1-425b-b7c0-8438b0c9ef54_image.jpeg",
+    "description": "Яйця \"Бенедикт\" з голландським соусом подаються на тостах з креветками",
+    "popular": false
+  },
+  {
+    "id": 6139015,
+    "name": "Яйца Бенедикт з фореллю та авокадо під голландським соусом, 430г",
+    "category": "Сніданки",
+    "price": 386,
+    "photo": "https://img.postershop.me/17690/1be60bb7-583c-4e59-9469-fb5d978d292a_image.jpeg",
+    "description": "Яйця \"Бенедикт\" з голландським соусом подаються на Бріоші з фореллю",
+    "popular": false
+  },
+  {
+    "id": 6849007,
+    "name": "Деруни з фореллюі яйцем Бенедикт під соусом Голандез, 450г",
+    "category": "Сніданки",
+    "price": 374,
+    "photo": "https://img.postershop.me/17690/7a462a5c-70d1-4147-b4c5-4275d1de7bae_image.jpeg",
+    "description": "Ніжні картопляні драники, підрум’янені до хрумкої скоринки, подаються з делікатесною слабосоленою фореллю, яйцем Бенедикт із рідким жовтком та класичним соусом Голандез",
+    "popular": true
+  },
+  {
+    "id": 5145220,
+    "name": "Омлет з філе курки на лаваше, 330г",
+    "category": "Сніданки",
+    "price": 273,
+    "photo": "https://img.postershop.me/17690/6746afa0-ccdb-4aaa-8b9c-5066a1530321_image.jpeg",
+    "description": "Тонкий лаваш, куряче яйце (2 шт), копчене куряче філе, сир Mozarella, помідор Черрі, петрушка, кріп (330 г)",
+    "popular": false
+  },
+  {
+    "id": 5540022,
+    "name": "Шакшука, 350г",
+    "category": "Сніданки",
+    "price": 269,
+    "photo": "https://img.postershop.me/17690/7aeea037-e221-4e1a-921e-26c194152a33_image.jpeg",
+    "description": "Складається з яєць, приготованих у густому томатному соусі з додаванням овочів та спецій. Основою є соус з помідорів, цибулі, часнику, солодкого перцю та різних спецій. Подається з грінками.",
+    "popular": false
+  },
+  {
+    "id": 5279316,
+    "name": "Сирники з домашнього сиру зі сметаною, 200г",
+    "category": "Сніданки",
+    "price": 213,
+    "photo": "https://img.postershop.me/17690/15f2d060-8757-4744-bd9c-5226fa4026d8_image.jpeg",
+    "description": "З домашнього сиру та родзинками, обсмажені до золотистої скоринки. Подаються зі сметаною",
+    "popular": false
+  },
+  {
+    "id": 5682810,
+    "name": "Сирники з білим шоколадом та лохиною, 230г",
+    "category": "Сніданки",
+    "price": 294,
+    "photo": "https://img.postershop.me/17690/1152163e-91a8-43c3-b7f5-94899f357ce6_image.jpeg",
+    "description": "Сирники з білим шоколадом та лохиною: ніжні сирники з домашнього сиру, з додаванням родзинок, білого шоколаду та свіжої лохини, обсмажені до золотистої скоринки. Солодкий і ароматний десерт для особливого задоволення",
+    "popular": true
+  },
+  {
+    "id": 5311714,
+    "name": "Ліниві вареники з домашнього сиру зі сметаною, 180г",
+    "category": "Сніданки",
+    "price": 248,
+    "photo": "https://img.postershop.me/17690/68fa72df-6e95-4aa4-93ad-ad580d038b72_image.jpeg",
+    "description": "Той самий смак за рецептом бабусі з домашнього сиру, подаються з цукровою пудрою, сметаною і вершковим маслом",
+    "popular": true
+  },
+  {
+    "id": 5028320,
+    "name": "Млинці з сиром та родзинками, 200г",
+    "category": "Сніданки",
+    "price": 147,
+    "photo": "https://img.postershop.me/17690/22785a26-226f-4bde-a7e6-8934f9b45b79_image.jpeg",
+    "description": "Солодкі млинці з начинкою з домашнього сиру та родзинками",
+    "popular": false
+  },
+  {
+    "id": 5028319,
+    "name": "Млинці з куркою, 180г",
+    "category": "Сніданки",
+    "price": 167,
+    "photo": "https://img.postershop.me/17690/c5c20e8e-03b3-4d17-a235-d7b7f905aa8a_image.jpeg",
+    "description": "Ніжні тонкі млинці з соковитою начинкою із шматочків обсмаженого курячого філе, доповненою обсмаженою цибулею та спеціями. Начинка має насичений смак і приємну текстуру. Подаються зі сметаною",
+    "popular": false
+  },
+  {
+    "id": 5028322,
+    "name": "Млинці з сиром філадельфія та грибами, 220г",
+    "category": "Сніданки",
+    "price": 167,
+    "photo": "https://img.postershop.me/17690/7b03d242-2dfe-4aaa-92ab-a0ef65b38fbd_image.jpeg",
+    "description": "Млинці з сиром «Філадельфія» та грибами – це поєднання ніжних тонких млинців із кремовою начинкою з вершкового сиру та обсмажених шампіньйонів. Смаковий баланс досягається за рахунок легкого кремового відтінку сиру та аромату грибів із додаванням цибулі та спецій. Подається зі сметаною.",
+    "popular": false
+  },
+  {
+    "id": 5831349,
+    "name": "Каша вівсяна з ягодами та фруктами на молоці, 200г",
+    "category": "Сніданки",
+    "price": 140,
+    "photo": "https://img.postershop.me/17690/d784d542-eb0d-43b6-84fa-72fd684db50d_image.jpeg",
+    "description": "Ніжні та корисні вівсяні пластівці, доповнені ароматним медом і свіжими сезонними фруктами для збалансованого смаку та енергії на весь день.",
+    "popular": false
+  },
+  {
+    "id": 5831362,
+    "name": "Каша вівсяна з пармезаном та оливковою олією, 200г",
+    "category": "Сніданки",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/03b2fc5e-d8aa-4bf4-9680-8d59b88bbfe2_image.jpeg",
+    "description": "Незвичне поєднання класичної вівсянки з витонченим смаком італійського пармезану. Ідеальна для тих, хто цінує баланс між користю та вишуканістю.",
+    "popular": false
+  },
+  {
+    "id": 6024460,
+    "name": "Ковбаски гриль (на вибір), 200г",
+    "category": "Сніданки",
+    "price": 97,
+    "photo": "https://img.postershop.me/17690/de58d743-5796-4608-9baf-1a089e065faa_image.jpeg",
+    "description": "Апетитні домашні ковбаски з фаршу із яловичини подаються з гірчичним соусом і овочами",
+    "popular": false
+  },
+  {
+    "id": 5541639,
+    "name": "Збери свій сніданок",
+    "category": "Сніданки",
+    "price": 130,
+    "photo": "https://img.postershop.me/17690/42b918ee-6ae9-43c8-8aea-b565a86e6013_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5745959,
+    "name": "Запіканка, 175г",
+    "category": "Сніданки",
+    "price": 143,
+    "photo": "https://img.postershop.me/17690/c8840862-0e0d-4a2e-a13d-e6b818f003ed_image.jpeg",
+    "description": "Ніжна запіканка з домашнього сиру, запечена до золотистої скоринки. Солодкі родзинки додають приємної фруктової нотки, а натуральні інгредієнти створюють відчуття домашнього тепла. Ідеально смакує як на сніданок, так і до горнятка чаю.",
+    "popular": false
+  },
+  {
+    "id": 6931704,
+    "name": "Запіканка, 1400г",
+    "category": "Сніданки",
+    "price": 1070,
+    "photo": "https://img.postershop.me/17690/1266105e-2e3b-41bd-8686-3af66f8b5b77_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7278692,
+    "name": "Деруни з гуакомоле, креветками і яйцем пашот",
+    "category": "Сніданки",
+    "price": 349,
+    "photo": "https://img.postershop.me/17690/6f2e7bb4-113a-4cb7-9090-421380538360_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6565827,
+    "name": "Тартіні з гуакамоле та тунцем, 460г",
+    "category": "Сендвічі, тартіні",
+    "price": 324,
+    "photo": "https://img.postershop.me/17690/7a8ad48e-0663-49b8-9564-51936094be32_image.jpeg",
+    "description": "Вишукана закуска, де ніжний тунець гармонійно поєднується з кремовим гуакамоле, приправленим свіжим лаймом та ароматною кінзою, зеленою цибулею. Страва дарує справжню симфонію смаку для тих, хто цінує легкість і вишуканість у кожному шматочку. Смакує з сухим вином кюве Alter Admiral або білим сухим вином Sauvignon Blanc, Кied Ьittercraft",
+    "popular": false
+  },
+  {
+    "id": 6918576,
+    "name": "Тартіні з телятиною, 370г",
+    "category": "Сендвічі, тартіні",
+    "price": 378,
+    "photo": "https://img.postershop.me/17690/b6207d01-75e3-4806-9372-e0399670cd71_image.jpeg",
+    "description": "Соковиті слайси телятини на хрумкій основі деревенского хліба У поєднанні з руколою, маринованими халапеньйо, в’яленими томатами та пікантним соусом вітелло тоннато Ідеально смакує з келихом червоного вина Atler Admiral",
+    "popular": true
+  },
+  {
+    "id": 5618257,
+    "name": "Сендвіч з ніжним курячим філе та сиром, 390г",
+    "category": "Сендвічі, тартіні",
+    "price": 264,
+    "photo": "https://img.postershop.me/17690/54898a47-0d8f-46f4-97c8-7dd5f468d2f3_image.jpeg",
+    "description": "Складається з двох шматків хліба, між якими розміщені копчене куряче филе, сиру, листя салату, cолоний огірок та скибочки помідора з додаванням медового соуса",
+    "popular": false
+  },
+  {
+    "id": 5618249,
+    "name": "Сендвіч з курячим філе, пармезаном та оливками, 380г",
+    "category": "Сендвічі, тартіні",
+    "price": 264,
+    "photo": "https://img.postershop.me/17690/b1aba054-2d73-45f5-96de-244aaf5f96e4_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028295,
+    "name": "Ікра \"Бурякова\", 150г",
+    "category": "Холодні закуски",
+    "price": 98,
+    "photo": "https://img.postershop.me/17690/6feaf0fa-bb24-4f4c-84a0-19db0bd9c635_image.jpeg",
+    "description": "Улюблена закуска одеситів з печеного буряка з приправами, зеленню та тостами",
+    "popular": false
+  },
+  {
+    "id": 5999209,
+    "name": "Севіче з сібаса під манговим та маракуйовим соусом,100г",
+    "category": "Холодні закуски",
+    "price": 348,
+    "photo": "https://img.postershop.me/17690/730e2594-5abf-44a0-9dad-6332dbc16ae1_image.jpeg",
+    "description": "Свіжий сібас, маринований до досконалості, у поєднанні з освіжаючим соусом з манго та маракуї. Легки нотки олвкової олії додають страві завершеності, створюючі витончену гармонію смаків!",
+    "popular": false
+  },
+  {
+    "id": 5955223,
+    "name": "Тартар з телятини, 190г",
+    "category": "Холодні закуски",
+    "price": 378,
+    "photo": "https://img.postershop.me/17690/e5953f26-64f1-43e2-bed9-351d15914607_image.jpeg",
+    "description": "Найсвіжіше сире філе телятини, дрібно нарізаного вручну. До нього додають каперси, цибулю-марс , мариновані огірки, домашній майонез, сир пармезан та заправлений соусом бальзамік. Подається з перепелиним яйцем та хрусткими тостами",
+    "popular": true
+  },
+  {
+    "id": 5734288,
+    "name": "Тартар з фореллю, 190г",
+    "category": "Холодні закуски",
+    "price": 364,
+    "photo": "https://img.postershop.me/17690/97bff172-decd-44d2-be17-32225d95c85e_image.jpeg",
+    "description": "Делікатесна страва, що поєднує дрібно нарізану слабосолону форель, авокадо, огірок та масага чорна. Заправка з лимонного соку, оливкової олії додає страві витонченого смаку, а свіжі трави та легка пікантність створюють ідеальний баланс. Подається з гхрусткими тостами, щоб підкреслити текстуру і смакові відтінки",
+    "popular": false
+  },
+  {
+    "id": 5344541,
+    "name": "Форель власного посолу, 125г",
+    "category": "Холодні закуски",
+    "price": 284,
+    "photo": "https://img.postershop.me/17690/729eb247-13b5-4826-b590-e864f3397237_image.jpeg",
+    "description": "Ніжне філе форелі, засолене за нашим фірмовим рецептом",
+    "popular": false
+  },
+  {
+    "id": 6148843,
+    "name": "Сирне плато, 395г",
+    "category": "Холодні закуски",
+    "price": 637,
+    "photo": "https://img.postershop.me/17690/7c0e58f3-e280-4f83-b8f3-d56c352c5073_image.jpeg",
+    "description": "Асорті сирів: гауда, камамбер, дор блю, пармезан. Смакує з напівсухим вином Merlot Rose.",
+    "popular": false
+  },
+  {
+    "id": 7183646,
+    "name": "Форшмак \"Монті\", 150г",
+    "category": "Холодні закуски",
+    "price": 187,
+    "photo": "https://img.postershop.me/17690/d2e120c3-3fac-4949-834a-78753a25eeb7_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7208216,
+    "name": "Оселедець, 180г",
+    "category": "Холодні закуски",
+    "price": 220,
+    "photo": "https://img.postershop.me/17690/64c58176-14c9-44cc-b420-5d8836d4c191_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7232289,
+    "name": "Квашена капуста, 100 гр",
+    "category": "Холодні закуски",
+    "price": 69,
+    "photo": "https://img.postershop.me/17690/21730814-0928-4fa4-a964-03e075666c24_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7232292,
+    "name": "Тарілка соління, 400 гр",
+    "category": "Холодні закуски",
+    "price": 273,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5817763,
+    "name": "Кіш з фореллю, 160г",
+    "category": "Гарячі закуски",
+    "price": 237,
+    "photo": "https://img.postershop.me/17690/44f9a648-b27e-4cbe-b9a9-a851e51daeb3_image.jpeg",
+    "description": "Ніжний відкритий пиріг з тонким пісочним тістом і соковитою начинкою. В основі слабосолона форель, гармонійно поєднується з вершковим кремом, помідорами і ніжним сиром. Легкий аромат свіжої зелені доповнює витончений смак. Смакує з напівсолодким вином Muller Turgau",
+    "popular": false
+  },
+  {
+    "id": 5278076,
+    "name": "Деруни, 200г",
+    "category": "Гарячі закуски",
+    "price": 82,
+    "photo": "https://img.postershop.me/17690/4c570f72-3925-4e07-b511-8d48d0897f91_image.jpeg",
+    "description": "Смачні картопляні оладки, зроблені з натертої картоплі, цибулі та спецій, обсмажені до хрусткої золотистої скоринки. Подаються гарячими зі сметаною. Ідеальний вибір для сніданку чи закуски.",
+    "popular": false
+  },
+  {
+    "id": 5991835,
+    "name": "Гребінці під трюфельним соусом, 200г",
+    "category": "Гарячі закуски",
+    "price": 598,
+    "photo": "https://img.postershop.me/17690/87985698-7c73-4527-8996-51eb722df33c_image.jpeg",
+    "description": "Соковиті гребінці з делікатним трюфельним соусом, що надає страві витонченого смаку та аромату",
+    "popular": false
+  },
+  {
+    "id": 6729743,
+    "name": "Креветка, 170г",
+    "category": "Гарячі закуски",
+    "price": 315,
+    "photo": "https://img.postershop.me/17690/f92c08cc-8fac-4224-a42e-b81598a3b6de_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6857943,
+    "name": "Панко креветка, 170г",
+    "category": "Гарячі закуски",
+    "price": 298,
+    "photo": "https://img.postershop.me/17690/51dacb64-0285-409b-b7a3-a0d62e041e76_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6857951,
+    "name": "Панко кальмар, 170г",
+    "category": "Гарячі закуски",
+    "price": 249,
+    "photo": "https://img.postershop.me/17690/9641d49b-4e02-4859-9a14-9b3ceeddf788_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7205923,
+    "name": "Баклажан по-пармськи, 220г",
+    "category": "Гарячі закуски",
+    "price": 246,
+    "photo": "https://img.postershop.me/17690/254a1922-736b-42f0-a959-59fb7e272aea_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7381553,
+    "name": "Камамбер гриль з печеними томатами під креветково-вершковим соусом",
+    "category": "Гарячі закуски",
+    "price": 461,
+    "photo": "https://img.postershop.me/17690/a3622758-129a-4b8c-86c2-814075ea28f0_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5292590,
+    "name": "Салат овочевий по-домашньому 160г",
+    "category": "Салати",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/1637e674-b77c-407b-bd50-ca4dd1f4207b_image.jpeg",
+    "description": "Салат з молодою капустою, томатами, огірками і редисом, заправляється за бажанням сметаною і домашнім майонезом, або олією",
+    "popular": false
+  },
+  {
+    "id": 5097876,
+    "name": "Теплий салат із тунцем , 400г",
+    "category": "Салати",
+    "price": 489,
+    "photo": "https://img.postershop.me/17690/c508778f-40ef-49b8-bc96-3deb5f407b8f_image.jpeg",
+    "description": "Свіжий тунець, мікс салату, рукола, яйце, спаржева квасоля, помідори, смажена картопля, каперси, мікро зелень, соус нісуаз Краще смакує з напівсухим вином Merlot Rose",
+    "popular": true
+  },
+  {
+    "id": 5989860,
+    "name": "Теплий салат з телятиною, 310г",
+    "category": "Салати",
+    "price": 547,
+    "photo": "https://img.postershop.me/17690/f8a16345-fecb-4bc8-9dd4-873a57efed88_image.jpeg",
+    "description": "Теплий салат з телятиною, свіжими сезонними овочами та легким соусом на основі оливкової олії Рекомендуємо з сухим вином кюве Alter Admiral",
+    "popular": false
+  },
+  {
+    "id": 5515626,
+    "name": "Салат Цезар з куркою , 290г",
+    "category": "Салати",
+    "price": 264,
+    "photo": "https://img.postershop.me/17690/38e42177-f9e2-4c28-ba73-1fa22fd3a4d6_image.jpeg",
+    "description": "Ніжні шматочки соковитої фермерської курятини подаються на свіжому міксі салатних листків, з пармезаном, перепелиними яйцями і томатами. Доповнено хрусткими крутонами та витонченим соусом Цезар, приготованим за традиційним рецептом. Смакує з легким напівсолодким вином Muller Turgau",
+    "popular": false
+  },
+  {
+    "id": 5528278,
+    "name": "Салат Цезар з креветками, 250г",
+    "category": "Салати",
+    "price": 364,
+    "photo": "https://img.postershop.me/17690/a7f6a356-ccd4-46d8-bfdd-5eafe28a6ebe_image.jpeg",
+    "description": "Свіжий салат, хрусткі крутони та тертий пармезан. Додаються соковиті креветки, які швидко обсмажуються до золотистого кольору, що додає страві делікатного морського смаку Рекомендуємо з білим сухим вином Sauvignon Blanc, Кied Ьittercraft",
+    "popular": true
+  },
+  {
+    "id": 5613374,
+    "name": "Салат Цезар з фореллю, 300г",
+    "category": "Салати",
+    "price": 379,
+    "photo": "https://img.postershop.me/17690/ecf507f3-7c5b-4fba-873b-9d100f162624_image.jpeg",
+    "description": "Поєднання свіжих листків салату, соковитих шматочків слабосоленої форелі, ніжного пармезану та хрустких круто́нів. Страва доповнюється класичним соусом «Цезар» на основі оливкової олії, гірчиці та лимонного соку, що надає салату збалансованого смаку. Рекомендуємо додати напівсухе вино Merlot Rose або легке напівсолодке вино Muller Turgau",
+    "popular": false
+  },
+  {
+    "id": 5728731,
+    "name": "Панцанелла, 270г",
+    "category": "Салати",
+    "price": 363,
+    "photo": "https://img.postershop.me/17690/feb32270-3b70-4639-adf6-53e09cf95108_image.jpeg",
+    "description": "Асорті з жовтих й червоних томатів -чері, маринована червона цибуля, свіжий перець чилі та ароматна зелень. Хрусткі грінки з чіабатти вбирають яскраву заправку з оливкової олії, анчоусів та оливок. Літній італійський салат з характером і свіжістю в кожному інгредієнті. Краще смакує з напівсухим вином Merlot Rose",
+    "popular": true
+  },
+  {
+    "id": 6672568,
+    "name": "Форель під шубою, 240г",
+    "category": "Салати",
+    "price": 319,
+    "photo": "https://img.postershop.me/17690/900a5327-01b3-44b1-9831-4a822564a3ab_image.jpeg",
+    "description": "Авторська інтерпретація класичної страви: соковита форель у поєднанні з буряком, морквою та картоплею під легкою майонезною шапкою",
+    "popular": false
+  },
+  {
+    "id": 6808650,
+    "name": "Салат \"Севілія\" з хамоном та карамелізованою грушею, 200г",
+    "category": "Салати",
+    "price": 405,
+    "photo": "https://img.postershop.me/17690/d194c517-6415-4eed-ad07-baa6ef8125c2_image.jpeg",
+    "description": "Вишукане поєднання тонко нарізаного хамону, соковитої карамелізованої груші, ніжного крем-сиру та міксу зелені. Легкий, ароматний салат із тонким балансом солодкого й солоного — ідеальний старт до основної страви або самостійний делікатес Смакує з легким напівсухим вином Merlot Rose",
+    "popular": true
+  },
+  {
+    "id": 7211853,
+    "name": "Салат \"Олів'є з язиком\", 210г",
+    "category": "Салати",
+    "price": 309,
+    "photo": "https://img.postershop.me/17690/71dbad59-5dd7-4b9b-9ed2-9e37726a39b9_image.jpeg",
+    "description": "Традиційний салат, який складається з відвареної картоплі, моркви, яєць, маринованих огірків, зеленого горошку, домашнього майонезу та телячого язика",
+    "popular": false
+  },
+  {
+    "id": 7211882,
+    "name": "Салат \"Олів'є\", 210г",
+    "category": "Салати",
+    "price": 246,
+    "photo": "https://img.postershop.me/17690/126347c4-b55a-407f-8d97-ee22eb14cf83_image.jpeg",
+    "description": "Традиційний салат, який складається з відвареної картоплі, моркви, яєць, маринованих огірків, зеленого горошку, вареного м’яса та домашнього майонезу",
+    "popular": false
+  },
+  {
+    "id": 7215185,
+    "name": "Оселедець під шубою, 220г",
+    "category": "Салати",
+    "price": 224,
+    "photo": "https://img.postershop.me/17690/9a222377-27ad-48bc-b136-e11795669e05_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7215186,
+    "name": "Салат \"Олів'є з креветкою\", 210г",
+    "category": "Салати",
+    "price": 357,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7333720,
+    "name": "Теплий салат з печених овочів із сиром фета, 260 гр",
+    "category": "Салати",
+    "price": 362,
+    "photo": "https://img.postershop.me/17690/569fc2e7-0b85-4dab-9dae-d54789ebe96f_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6038350,
+    "name": "Бульйон курячий, 300г",
+    "category": "Супи",
+    "price": 171,
+    "photo": "https://img.postershop.me/17690/46f56e0f-75e0-492b-b79b-09ce7e5cea15_image.jpeg",
+    "description": "Прозорий бульйон із домашньої курки, лапши Удон,перепелиного яйця овочі, петрушка, кріп",
+    "popular": false
+  },
+  {
+    "id": 5028297,
+    "name": "Борщ з пампушками, 300г",
+    "category": "Супи",
+    "price": 187,
+    "photo": "https://img.postershop.me/17690/e8482e2e-ef2e-40d0-b283-d2847f3c88f2_image.jpeg",
+    "description": "Традиційний український борщ з часником, виготовлений на бульоні з домашньої курочки. Подається з ароматними часниковими пампушками і зеленню",
+    "popular": true
+  },
+  {
+    "id": 5925260,
+    "name": "Том Ям, 400г",
+    "category": "Супи",
+    "price": 427,
+    "photo": "https://img.postershop.me/17690/414eb371-e2f8-423e-9c08-6c56b11cc7cd_image.jpeg",
+    "description": "Традиційний тайський суп на основі курячого бульйону з ароматними грибами шіїтаке, кокосовим молоком та пряною пастою Том Ям, подається з тигровими креветками, мідіями, помідорами та свіжою кінзою",
+    "popular": true
+  },
+  {
+    "id": 5464234,
+    "name": "Окрошка з куркою, 370г",
+    "category": "Супи",
+    "price": 193,
+    "photo": "https://img.postershop.me/17690/c938df93-d6a8-49a3-afde-39593c46f7b0_image.jpeg",
+    "description": "Найпопулярніший в Україні літній хлодний суп! Хрусткі огірки, соковита редиска, ніжна молода картопля, шматочки фермерської курочки, перепелине яєчко, свіжа зелень. Все це щедро заливається прохолодной сироваткою, або газованою/негазованою водою, за вашим смаком",
+    "popular": false
+  },
+  {
+    "id": 5623308,
+    "name": "Окрошка з креветками та фореллю, 370г",
+    "category": "Супи",
+    "price": 347,
+    "photo": "https://img.postershop.me/17690/e5ea81c4-0c64-48d8-8e72-2f4172d06bf7_image.jpeg",
+    "description": "Легка та вишукана літня страва на основі сироватки або мінеральної води. Поєднання ніжної слабосолоної форелі, соковитих креветок, свіжих овочів і зелені створює гармонійний смак",
+    "popular": false
+  },
+  {
+    "id": 6696748,
+    "name": "Окрошка з телячим язиком, 370 гр",
+    "category": "Супи",
+    "price": 283,
+    "photo": "https://img.postershop.me/17690/7f577707-d274-4433-abb7-f7e1beaf51ee_image.jpeg",
+    "description": "Ніжна й освіжаюча — на вибір: сироватка або мінеральна вода. Делікатний телячий язик, молода картопля, свіжий і солоний огірок, редис, зелена цибулька та перепелине яйце",
+    "popular": false
+  },
+  {
+    "id": 6378797,
+    "name": "Паста з морепродуктами, 330г",
+    "category": "Пасти, різотто",
+    "price": 417,
+    "photo": "https://img.postershop.me/17690/d8fbbc86-d703-41a3-a0bf-ff7b9fa9a7a9_image.jpeg",
+    "description": "Фетучіні з ніжними морепродуктами: тигрові креветки, мідії та форель власного посолу приготовані в ніжному вершково-шпинатному соусі з додаванням чорної масаги. Подається з сиром пармезаном. Краще смакує з напівсухим вином Merlot Rose або білим сухим вином Sauvignon Blanc, Кied Ьittercraft",
+    "popular": true
+  },
+  {
+    "id": 6628595,
+    "name": "Різотто з креветками, 160г",
+    "category": "Пасти, різотто",
+    "price": 287,
+    "photo": "https://img.postershop.me/17690/cd9d858b-7493-4f06-af38-0ea13d00f202_image.jpeg",
+    "description": "Ніжне кремове різотто на основі італійського рису арборіо з креветками, вершковим соусом та легкими нотками вина. Вишукана страва з тонким балансом смаку. Краще смакує з напівсухим вином Merlot Rose",
+    "popular": true
+  },
+  {
+    "id": 6631500,
+    "name": "Різотто з фореллю, 190г",
+    "category": "Пасти, різотто",
+    "price": 319,
+    "photo": "https://img.postershop.me/17690/10e28996-13c9-4931-8b34-caca4a328fed_image.jpeg",
+    "description": "Ніжне кремове різотто на основі італійського рису арборіо з соковитою слабосоленою фореллю, вершковим соусом та легкими нотками вина. Вишукана страва з тонким балансом смаку. Краще смакує з напівсухим вином Merlot Rose",
+    "popular": false
+  },
+  {
+    "id": 6805460,
+    "name": "Соба - азійська локшина з куркою та овочами, 240 гр",
+    "category": "Пасти, різотто",
+    "price": 312,
+    "photo": "https://img.postershop.me/17690/c1cf88ff-334f-4ba0-8d45-1ca4e2eea844_image.jpeg",
+    "description": "Гречана локшина соба, обсмажена з ніжними смужками курячого філе, яскравим болгарським перцем, пікантним чилі та грибами шиітаке. Додано насичений горіховий соус для багатого смаку, завершується свіжою кінзою для яскравого фіналу. Справжня гастрономічна подорож до Азії Рекомендуємо з напівсолодким вином Gewurztraminer Spatlese або білим сухим вином Sauvignon Blanc, Кied Ьittercraft",
+    "popular": true
+  },
+  {
+    "id": 6919897,
+    "name": "Паста з лисичками, 200г",
+    "category": "Пасти, різотто",
+    "price": 267,
+    "photo": "https://img.postershop.me/17690/ef0bd58d-f320-44d7-b303-8c360f884f09_image.jpeg",
+    "description": "Ароматна паста у ніжному вершковому соусі з лісовими лисичками. Гриби додають страві глибокий смак та апетитний аромат, а соус делікатно обгортає кожен шматочок пасти",
+    "popular": false
+  },
+  {
+    "id": 5541595,
+    "name": "Котлетки курячі парові без соуса, 200г",
+    "category": "М'ясо",
+    "price": 97,
+    "photo": "https://img.postershop.me/17690/e8f1bbe9-a057-487a-aef1-868e2ef85268_image.jpeg",
+    "description": "Легкі та дієтичні котлети з ніжного курячого філе, приготовані на парі без додавання соусу. Зберігають усі корисні властивості м’яса та мають делікатний смак",
+    "popular": false
+  },
+  {
+    "id": 5078251,
+    "name": "Котлетки курячі парові піл соусом Дор Блю, 200г",
+    "category": "М'ясо",
+    "price": 186,
+    "photo": "https://img.postershop.me/17690/7e60d231-94c5-46ac-844c-f604b4541638_image.jpeg",
+    "description": "Ніжні курячі котлети у вершково-грибному соусі (200 г)",
+    "popular": false
+  },
+  {
+    "id": 5343945,
+    "name": "Пательня з курячого філе, 190г",
+    "category": "М'ясо",
+    "price": 284,
+    "photo": "https://img.postershop.me/17690/76028943-d4c5-4f37-a3d6-f88c61b2c3b0_image.jpeg",
+    "description": "Шматочки філе фермерської курочки, обсмажені з овочами аль денте, зеленню та крутоном у часніковому соусі",
+    "popular": false
+  },
+  {
+    "id": 5480382,
+    "name": "Стейк індички з овочами гриль",
+    "category": "М'ясо",
+    "price": 428,
+    "photo": "https://img.postershop.me/17690/65740a06-e24f-44e9-bad4-2c1170e839ff_image.jpeg",
+    "description": "М‘яке та соковите філе індички з овочами гриль, зеленню і пікантним соусом",
+    "popular": false
+  },
+  {
+    "id": 5541463,
+    "name": "Стейк із свинини та овочами гриль, 250г",
+    "category": "М'ясо",
+    "price": 354,
+    "photo": "https://img.postershop.me/17690/e4155efd-6d4f-4429-8453-2ab9c2d8f6f3_image.jpeg",
+    "description": "Соковитий свинячий стейк, приготований до ідеальної ніжності, подається з ароматними овочами-гриль, маринованою червоною цибулею та соусом барбекю. Найкраще смакую з сухим вином кюве Alter Admiral",
+    "popular": false
+  },
+  {
+    "id": 6380526,
+    "name": "Томлені свинні реберця під соусом, 350г",
+    "category": "М'ясо",
+    "price": 477,
+    "photo": "https://img.postershop.me/17690/ace62983-fcf3-4d88-abb2-34d8dee1df8d_image.jpeg",
+    "description": "Ніжні свинні ребра, томлені у винному соусі з додаванням трав, пряних спецій. Найкраще смакую з сухим вином кюве Alter Admiral",
+    "popular": true
+  },
+  {
+    "id": 6386567,
+    "name": "Біфстроганов з картопляним пюре, 270 гр",
+    "category": "М'ясо",
+    "price": 293,
+    "photo": "https://img.postershop.me/17690/f41a5092-e733-4ba7-be0d-cf0ddcc5720c_image.jpeg",
+    "description": "Соковита вирізка яловичини тушкована у вершковому соусі зі спеціями, подається з ніжним картопляним пюре.",
+    "popular": false
+  },
+  {
+    "id": 6145343,
+    "name": "Ніжне ципля табака, 390г",
+    "category": "М'ясо",
+    "price": 473,
+    "photo": "https://img.postershop.me/17690/a7b1f1fc-c455-4990-bb08-86e160a9250d_image.jpeg",
+    "description": "Ніжне курча, замариноване в суміші спецій, обсмажене до золотистої скоринки та доведене до ідеальної соковитості. Страва з насиченим ароматом та витонченим смаком. Подається з салатом та кетчупом",
+    "popular": false
+  },
+  {
+    "id": 7180375,
+    "name": "Шніцель австрійський з яловичина, 150гр",
+    "category": "М'ясо",
+    "price": 329,
+    "photo": "https://img.postershop.me/17690/770fc2cc-03e1-4ad9-8590-5ad2889b7019_image.jpeg",
+    "description": "Ніжна яловичинау золотистій паніровці, подається з гірчичним соусом і зеленим маслом",
+    "popular": false
+  },
+  {
+    "id": 7180376,
+    "name": "Шніцель австрійський курячий, 150гр",
+    "category": "М'ясо",
+    "price": 228,
+    "photo": "https://img.postershop.me/17690/875faaa6-91fb-465c-acaf-b191d62fdc28_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7241271,
+    "name": "Мітболи з телятини під вершковим соусом з броколі та квасолею «Nordic Meatballs Set”, 270г",
+    "category": "М'ясо",
+    "price": 347,
+    "photo": "https://img.postershop.me/17690/62358653-4d5d-4407-bda1-2e8f3c8f05b1_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7409600,
+    "name": "Медальони з телятини з білими грибами під вершковим соусом та молодой картоплею",
+    "category": "М'ясо",
+    "price": 714,
+    "photo": "https://img.postershop.me/17690/66758eaf-05f3-45f9-9a9d-d179334227c5_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5464264,
+    "name": "Філе судака з картопляним пюре, 260г",
+    "category": "Риба",
+    "price": 267,
+    "photo": "https://img.postershop.me/17690/9a595b91-f622-44a6-89d7-d44fc2868602_image.jpeg",
+    "description": "Ніжне філе судака під шубою зі шпинату з вершками та картопляним пюре.",
+    "popular": false
+  },
+  {
+    "id": 6148772,
+    "name": "Стейк форелі, 150г",
+    "category": "Риба",
+    "price": 327,
+    "photo": "https://img.postershop.me/17690/a2ecfbce-297f-4a8e-a00e-e3f78bbffc4c_image.jpeg",
+    "description": "Соковитий стек з форелі. Найкраще смакує з напівсолодким вином Muller Turgau",
+    "popular": false
+  },
+  {
+    "id": 5820140,
+    "name": "Дорадо, 400 гр",
+    "category": "Риба",
+    "price": 487,
+    "photo": "https://img.postershop.me/17690/0dd7d25d-06df-4016-a05a-06d5443739f8_image.jpeg",
+    "description": "Делікатесна риба зі щільним, ніжним м’ясом і тонким, витонченим смаком. Запікається цілою, що дозволяє зберегти соковитість і розкрити аромат. Приготована з лимоном, свіжими травами та оливковою олією Краще смакує з напівсухим вином Merlot Rose",
+    "popular": true
+  },
+  {
+    "id": 7404538,
+    "name": "Форель Verde з кабачками і броколі під соусом \"Ризото\", 445 г",
+    "category": "Риба",
+    "price": 384,
+    "photo": "https://img.postershop.me/17690/48a226d4-d785-4cc6-ad70-07f4d5730cb6_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5194108,
+    "name": "Картопляне пюре, 150г",
+    "category": "Гарніри",
+    "price": 64,
+    "photo": "https://img.postershop.me/17690/7c7b2ade-ae16-4c0d-9026-77f865a0d88c_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5382211,
+    "name": "Гречана каша з вершковим маслом, 150г",
+    "category": "Гарніри",
+    "price": 67,
+    "photo": "https://img.postershop.me/17690/4f8e4df6-2325-4fb9-abe5-2fae47dbd593_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6343141,
+    "name": "Рис, 150г",
+    "category": "Гарніри",
+    "price": 73,
+    "photo": "https://img.postershop.me/17690/722f8144-4675-4d4d-9095-87e20ae074f5_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5936710,
+    "name": "Свіжі овочі, запечені на грилі, 210г",
+    "category": "Гарніри",
+    "price": 286,
+    "photo": "https://img.postershop.me/17690/e3149bad-1c10-46c1-985b-6566012e968d_image.jpeg",
+    "description": "Асорті зі свіжих сезонних овочів, приготовлених на грилі. Кабачки, баклажани, болгарський перець, помідори, печериці, заправлені маринадом, заправлені соєвим маринадом",
+    "popular": false
+  },
+  {
+    "id": 6803061,
+    "name": "Молода картопля з вершковим маслом, 230г",
+    "category": "Гарніри",
+    "price": 104,
+    "photo": "https://img.postershop.me/17690/b9e20ed9-3204-4f6d-b740-1aec7b4c0787_image.jpeg",
+    "description": "Молода картопля з вершковим маслом та зеленню",
+    "popular": false
+  },
+  {
+    "id": 6857909,
+    "name": "Лукові кільця, 150г",
+    "category": "Гарніри",
+    "price": 157,
+    "photo": "https://img.postershop.me/17690/5359b0ea-69f1-4d1f-847f-8c52dbbc27ab_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6857912,
+    "name": "Картопляні Діпи, 120г",
+    "category": "Гарніри",
+    "price": 134,
+    "photo": "https://img.postershop.me/17690/74178631-4968-4054-bbe5-b704297fe131_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6857919,
+    "name": "Батат Фрі, 150г",
+    "category": "Гарніри",
+    "price": 184,
+    "photo": "https://img.postershop.me/17690/e308a0d7-99fa-4f14-8d74-c97382098b6e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7180379,
+    "name": "Картопля з копченим курячим філе та грибами, 250гр",
+    "category": "Гарніри",
+    "price": 161,
+    "photo": "https://img.postershop.me/17690/e31bca4d-7de5-423c-b6d5-e5c1b885f3fa_image.jpeg",
+    "description": "Запечена молода картопля з печерицями, копченим курячим філе та сиром моцарела. Подається з гірчичним соусом і зеленим маслом",
+    "popular": false
+  },
+  {
+    "id": 6342008,
+    "name": "Чізкейк, 130г",
+    "category": "Десерт",
+    "price": 175,
+    "photo": null,
+    "description": "Класичний чізкейк на основі крем-сиру, доповнений ароматним малиновим джемом і свіжими ягодами лохини. Подається з ніжним вершковим морозивом для ідеального балансу смаків",
+    "popular": true
+  },
+  {
+    "id": 5367141,
+    "name": "Еклер з заварним кремом, 65г",
+    "category": "Десерт",
+    "price": 55,
+    "photo": "https://img.postershop.me/17690/96192337-fe43-46aa-9af1-989db99c162b_image.jpeg",
+    "description": "Наш фірмовий десерт, приготовлений за сімейним рецептом! Смачно, як у мами 😋",
+    "popular": false
+  },
+  {
+    "id": 6129107,
+    "name": "Еклер з заварним кремом під глазурью з чорного шоколаду, 75г",
+    "category": "Десерт",
+    "price": 80,
+    "photo": "https://img.postershop.me/17690/5c6234e7-6425-4788-9039-cd6a81e4f2eb_image.jpeg",
+    "description": "Десерт з ніжним заварним кремом у легкому, повітряному тісті, покритий шоколадним соусом",
+    "popular": false
+  },
+  {
+    "id": 6180047,
+    "name": "Дубайський шоколад чорний або молочний, 55г",
+    "category": "Десерт",
+    "price": 180,
+    "photo": "https://img.postershop.me/17690/66abfe73-55c4-47f9-9f32-792e44de27e8_image.jpeg",
+    "description": "Хрустке тісто катаіфі, 100% фісташкова паста, трохи тахіни ( кунжутна паста) в молочному або чорному бельгійському шоколад",
+    "popular": false
+  },
+  {
+    "id": 5496998,
+    "name": "Морозиво Gel\"Amol вершкове з фруктовим топінгом на вибір, 35г",
+    "category": "Десерт",
+    "price": 67,
+    "photo": "https://img.postershop.me/17690/ea4ca80e-6c3c-4b22-ab7a-f19457473833_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6932572,
+    "name": "Чізкейк з малиновим джемом та лохиною, 130г",
+    "category": "Десерт",
+    "price": 275,
+    "photo": "https://img.postershop.me/17690/4f0f189c-2f32-4e7a-87e1-6486b572ce90_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6932599,
+    "name": "Чізкейк з морозивом та шоколадом, 130г",
+    "category": "Десерт",
+    "price": 263,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7023163,
+    "name": "Медовик, 120 гр",
+    "category": "Десерт",
+    "price": 124,
+    "photo": "https://img.postershop.me/17690/9e234d8c-68a4-44b7-af62-1176457b3dba_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7289008,
+    "name": "Вівсяне печиво",
+    "category": "Десерт",
+    "price": 30,
+    "photo": "https://img.postershop.me/17690/9a3d4ef3-ed8b-470a-9bcf-97d20527edbd_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7289009,
+    "name": "Шоколадне печиво",
+    "category": "Десерт",
+    "price": 40,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7353046,
+    "name": "Зефір натуральний,50 гр",
+    "category": "Десерт",
+    "price": 40,
+    "photo": "https://img.postershop.me/17690/0c0d3c92-c312-45ae-963d-a1afa98fec8a_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6366579,
+    "name": "Merlot Rose",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/11350696-a692-4c7d-a943-eb40a01366c0_image.jpeg",
+    "description": "Напівсухе незвичайне вино екстракласу з сорту винограду Мерло рожево-померанчевого кольору із золотистими відблисками. Володіє свіжим ароматом і незвичайним легким фруктовим збалансовваним смаком полуниці. Зберігає довгий полусмак.",
+    "popular": true
+  },
+  {
+    "id": 6366583,
+    "name": "Grauer Burgunder",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/43ec7948-5d53-4b4b-8a48-7f942e5f1dbc_image.jpeg",
+    "description": "Біле сухе вино, найвищої якості, кольору світлого бурштину із золотими відблисками. В ароматі та смаку характерні типові для сорту свіжі мінеральні тони, літні трави. Довгий післясмак.",
+    "popular": false
+  },
+  {
+    "id": 6453169,
+    "name": "Müller Thurgau 2019",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/39b424a5-731e-42a7-aa20-34cba094faa0_image.jpeg",
+    "description": "Чудове легке вино, географічного найменування золотистого кольору. В ароматі та смаку яскраві ноти літнього трав\"яного лугу. Без додавання цукру.",
+    "popular": false
+  },
+  {
+    "id": 6453172,
+    "name": "Atler Admiral 2019",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/6afbb841-d72e-4482-92f7-8bfcb198bec2_image.jpeg",
+    "description": "Кюве 3 сортів винограду: каберне совіньйон, мерло та цвайгельт, витримане 18 місяців у дворічній дубовій бочці Вино вищої категорії гранд резерв темно-пурпурового кольору. Аромат диких ягід та легкий тон гіркого шоколаду. Має насичений смак асорті зрілих лісових ягід, з прозоро легкими нотами барика (свіжа дубова бочка). Без додавання цукру. Рекомендується до темних сортів м'яса",
+    "popular": false
+  },
+  {
+    "id": 6453181,
+    "name": "Gewürztraminer Spätlese 2018",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/ef60bed9-4036-4a0c-9d01-6a636dfd0151_image.jpeg",
+    "description": "Напівсолодке вино географічного найменування. Колір травневого меду із золотими відблисками. В ароматі та смаку характерний для сорту аромат рожевих пелюсток. Без додавання цукру.",
+    "popular": false
+  },
+  {
+    "id": 6818460,
+    "name": "Ausbruch Müller Thurgau 2014",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/c88f39f8-79ec-4a1c-9ed3-005a1fc5f900_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6818468,
+    "name": "Blaufrankisch 2017",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/3684e92a-d891-4527-a5d1-bd92942765e4_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6914812,
+    "name": "Sauvignon blanc, 2024",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6969168,
+    "name": "Der Burgunder",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/b6e829dc-80ec-4deb-b25a-fac4f737db92_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6969181,
+    "name": "Zweigelt, 2023, DAC",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/11746dae-0f9c-4485-9a86-631cd69c9e2c_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6969195,
+    "name": "Gruner Veltliner",
+    "category": "Вина Австрії із виноробні м.Руст",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/5dececb7-942d-4826-9097-75f3fb1d7478_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5941668,
+    "name": "Вино T.Cabolani Pinot Grigio",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/7dfcda7a-a5cf-4948-b094-85048963829f_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5941705,
+    "name": "Alsace. Hubert Beck \"Gewurztraminer\" A.O.C.",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/e01298a9-eef4-4887-9163-e4352aff56ac_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5941713,
+    "name": "Zonin 1821 Spumante \"Prosecco\" D.O.C. (brut) (Italy)",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/cd873251-e0f6-4a48-b2dd-cae90b991212_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5966895,
+    "name": "Piemonte.Zonin \"Asti\" D.O.C.G (sweet)",
+    "category": "Винна карта",
+    "price": 900,
+    "photo": "https://img.postershop.me/17690/6b5cc47d-d820-4fa0-83e3-13f64f7bcb09_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967146,
+    "name": "Decordi Lambrusco Frizzante (sweet)",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/95fd185d-d6a3-410f-826a-f50e5d22c580_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967163,
+    "name": "Maison Marselin, Lou Gat Mango \"Gro Mansan\" IGP",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/94bf8c71-2a38-4814-896d-02c6d2a1c15c_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967175,
+    "name": "Tomassi, Valpolicella \"Corvina/Rondinella\" D.O.C.",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/d0d1f9dd-a0e8-4680-a6e2-ce5ec7181af0_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967186,
+    "name": "Zuccardi, Fuzion sweet red",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/12ed4747-24d9-4574-805d-2d69edf539c6_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967194,
+    "name": "Les Grand, Sun Gate \"Zinfandel\"",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/ea1340b6-9aa0-4e17-a3fa-e6caeaee8528_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5967198,
+    "name": "Porto Graham'S Fine Tawny",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/f26375b3-4de2-4dbf-b7ff-73cf298172f0_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6059184,
+    "name": "Marlborough. Lake Chalice, The Falcon \"Sauvignon Blanc\" (dry)",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6158629,
+    "name": "Вино The Bench Совиньон Блан біле, б/а",
+    "category": "Винна карта",
+    "price": 150,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6158633,
+    "name": "Вино Kiwi Cuvee. Піно Нуар червоне б/а, 125 мл",
+    "category": "Винна карта",
+    "price": 145,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7076891,
+    "name": "Borgo San Leo Просекко Брют біле",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/8a560f92-770a-42f7-94f7-55977b0dfa84_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7179888,
+    "name": "Вино ігристе Zonin. Зеро безалкогольне",
+    "category": "Винна карта",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5966732,
+    "name": "New Apry Aperol, 280 мл",
+    "category": "Коктейльна карта",
+    "price": 275,
+    "photo": "https://img.postershop.me/17690/dff11386-210a-4a08-88e0-97fafc476cb8_image.jpeg",
+    "description": "Лікер Aperol & Apry & Peachtree, содова, тонік ‘’Bitter lemon’’ , Prosecco Zonin 1821",
+    "popular": false
+  },
+  {
+    "id": 5966751,
+    "name": "Captain Greyhound, 220 мл",
+    "category": "Коктейльна карта",
+    "price": 285,
+    "photo": "https://img.postershop.me/17690/444f9d91-8b4d-4320-b88b-5f7091642f44_image.jpeg",
+    "description": "Ром Botafogo Caribbean Spiсed Gold 2018* на банані , лікер De Kuyper Apricot Brandy , triple sec ,ананасовий сік, кордіал маракуйя, лимонний фреш Cмак: ведучі ноти маракуї , ананасу, легкі тона ванілі",
+    "popular": false
+  },
+  {
+    "id": 5966770,
+    "name": "Gin Garden from the Chef Barthender, 120 мл",
+    "category": "Коктейльна карта",
+    "price": 240,
+    "photo": "https://img.postershop.me/17690/8741295d-76ed-4df7-ae38-181ca40586d5_image.jpeg",
+    "description": "Джин Whitley Neil Original cristal, лікер apple puck & eldefloweer, сік яблука , лимон, яблучний сік Cмак: Атлантична вода, квіти білої бузини та яблуко, на подушці с витонченого джину",
+    "popular": true
+  },
+  {
+    "id": 5966785,
+    "name": "I will follow you, 220 мл",
+    "category": "Коктейльна карта",
+    "price": 285,
+    "photo": "https://img.postershop.me/17690/78611e24-5d94-4b34-968b-25e694cd40f5_image.jpeg",
+    "description": "Горілка фруктова Finlandia Lime, лікер green melon, lychee, coconut, сік ананас , лимонний фреш Cмак: Життя як мрія: грайлива комбінація – кокос, диня , стиглий банан в міксі з лаймом",
+    "popular": false
+  },
+  {
+    "id": 5966789,
+    "name": "Mirrors, 220 мл",
+    "category": "Коктейльна карта",
+    "price": 285,
+    "photo": "https://img.postershop.me/17690/e48bc163-65f2-4ba7-829f-51b9402c9be8_image.jpeg",
+    "description": "Текіла Sierra Silver на нектарині . лікер lychee & coconut, сік апельсин, лимон Cмак: Лічі, кокос та апельсин зі свіжістю агавового плоду",
+    "popular": false
+  },
+  {
+    "id": 5966803,
+    "name": "Gran Turismo, 220 мл",
+    "category": "Коктейльна карта",
+    "price": 365,
+    "photo": "https://img.postershop.me/17690/4cf5262d-9d5a-4c49-95af-33306037f0ec_image.jpeg",
+    "description": "Припатч ‘’Cristofer’’, Припатч ‘’Basil- beauty’’, лайм фреш, easy foam, Prosecco Zonin 1821 Cмак: Маракуйя та манго, банан, базилік та ананас, а також лайм та аґрус, подорож у тропіки на різних рівнях смаку",
+    "popular": false
+  },
+  {
+    "id": 5966812,
+    "name": "Nectarine Sour, 100 мл",
+    "category": "Коктейльна карта",
+    "price": 285,
+    "photo": "https://img.postershop.me/17690/255a2bc2-40a3-4fd9-94cd-7c61391f256e_image.jpeg",
+    "description": "Джин Whitley Neil Apple % Redberries , лікер peachtree & strawberry, лимон, Fentimans Rose Lemonade Cмак: Персик, та червоні ягоди з ароматом троянди",
+    "popular": true
+  },
+  {
+    "id": 5966819,
+    "name": "Savage, 100 мл",
+    "category": "Коктейльна карта",
+    "price": 250,
+    "photo": "https://img.postershop.me/17690/b2fbe536-bee1-4cfc-a554-65b8d36a972b_image.jpeg",
+    "description": "Віскі Spised Box Chocolate, бурбон Penny Packer на манго , Martini rubino, Campari, портвейн ‘’Graham’s Tawny’’ Cмак: Шоколад та дубова бочка, котрий переходить у томат та червоні ягоди",
+    "popular": false
+  },
+  {
+    "id": 5966828,
+    "name": "Porn Star Martini, 250 мл",
+    "category": "Коктейльна карта",
+    "price": 265,
+    "photo": "https://img.postershop.me/17690/8d8d1996-c444-4c20-8db8-627c74f5cd42_image.jpeg",
+    "description": "Горілка фруктова Finlandia Coconut, ром Botafogo spiced gold 2018*, кордіал маракуйя, цукровий сироп, Лимон фреш, Prosecco Zonin 1821 Cмак: Кокос та ваніль у комбінації з маракуєю та лаймом",
+    "popular": true
+  },
+  {
+    "id": 5966832,
+    "name": "Fear Zombie, 220 мл",
+    "category": "Коктейльна карта",
+    "price": 365,
+    "photo": "https://img.postershop.me/17690/ac22634c-701b-4db6-b5b9-0b12c7b35471_image.jpeg",
+    "description": "Ром Botafogo White , Botafogo dark, Botafogo Caribbean Spiсed Gold 2018* настояний на банані ,лікер De Kuyper Cherry , кордіал маракуйя, Absent, пюре манго, лайм фреш, цукровий сироп Cмак: Міцна колаборація : вишні , шоколаду, тропіків та ромової бочки! Оживаючи –живеш!",
+    "popular": false
+  },
+  {
+    "id": 5966846,
+    "name": "Negroni Extra, 100 мл",
+    "category": "Коктейльна карта",
+    "price": 265,
+    "photo": "https://img.postershop.me/17690/bb1cd3c2-a414-45f1-a618-2706756f10ae_image.jpeg",
+    "description": "Джин Whitley Neil Original , Campari, Cinzano Rosso, Yuzu Cмак: Мікс цитрусів та свіжість гірських трав",
+    "popular": false
+  },
+  {
+    "id": 6049198,
+    "name": "Old Fashioned, 80 мл",
+    "category": "Коктейльна карта",
+    "price": 340,
+    "photo": "https://img.postershop.me/17690/79866db5-e250-438e-ab12-127ccde79253_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6980819,
+    "name": "Spritzer",
+    "category": "Коктейльна карта",
+    "price": 124,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7081750,
+    "name": "Джин-тонік, 200мл",
+    "category": "Коктейльна карта",
+    "price": 198,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5983888,
+    "name": "Finlandia (лайм) 50 мл",
+    "category": "Карта бару",
+    "price": 96,
+    "photo": "https://img.postershop.me/17690/56649d3a-4858-4cf4-8334-160b1fec9a5e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991784,
+    "name": "Finlandia Vodka",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/15da4b22-caeb-4114-a126-d7237c49ce9b_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984019,
+    "name": "James Wyld (Lowland)",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/fecfea88-5a31-4f26-834c-73976cefbfdf_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984023,
+    "name": "Бурбон Penny Packer",
+    "category": "Карта бару",
+    "price": 110,
+    "photo": "https://img.postershop.me/17690/789fe60a-87b5-410b-ab73-cacd959fdd4a_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984027,
+    "name": "Ром Botafogo Spiced",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/d6cedab2-d030-48e8-8bd1-156f2f55535d_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984058,
+    "name": "Текіла Sierra Silver, 50 мл",
+    "category": "Карта бару",
+    "price": 110,
+    "photo": "https://img.postershop.me/17690/2f1972d6-8259-4931-87ed-a25cd4a9d78d_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984063,
+    "name": "Джин Whitley Neill Collection",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/fdbb3006-de82-4784-8687-44f527434450_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5984204,
+    "name": "Вермут Cinzano Rosso, 50 мл",
+    "category": "Карта бару",
+    "price": 40,
+    "photo": "https://img.postershop.me/17690/402195ad-3fc4-42ae-9d1d-718cd2b30a98_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991814,
+    "name": "Xenta Absenta",
+    "category": "Карта бару",
+    "price": 120,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991819,
+    "name": "Лікер De Kuyper (полуницяі)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991821,
+    "name": "Лікер Choya Yuzu",
+    "category": "Карта бару",
+    "price": 150,
+    "photo": "https://img.postershop.me/17690/444bc64e-5f10-4e9c-9d20-12912e5e5d4e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991822,
+    "name": "Aperol",
+    "category": "Карта бару",
+    "price": 80,
+    "photo": "https://img.postershop.me/17690/726ad3b8-01e5-46dd-881d-7e7cb1dfc362_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5991826,
+    "name": "Campari",
+    "category": "Карта бару",
+    "price": 90,
+    "photo": "https://img.postershop.me/17690/62875c2b-7150-46ef-8955-effff8b547e4_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6818397,
+    "name": "Горілка Сурс",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6818403,
+    "name": "Джин Фінсбарі Платинум",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6822699,
+    "name": "Віскі anCnoc, 50 мл",
+    "category": "Карта бару",
+    "price": 250,
+    "photo": "https://img.postershop.me/17690/8f0dbcd9-9360-4b79-b6b1-eabeb40c2598_image.png",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925666,
+    "name": "Лікер De Kuyper (бузина)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925699,
+    "name": "Лікер De Kuyper (зелене яблуко)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925702,
+    "name": "Лікер De Kuyper (лічі)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925706,
+    "name": "Лікер De Kuyper (персик)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925711,
+    "name": "Лікер De Kuyper (диня)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925717,
+    "name": "Лікер De Kuyper (абрикос)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925723,
+    "name": "Лікер De Kuyper (кокос)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925726,
+    "name": "Лікер De Kuyper (ананас)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6925730,
+    "name": "Лікер De Kuyper (банан)",
+    "category": "Карта бару",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6940577,
+    "name": "Ром Botafogo Black",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/2d9ce6eb-3021-4030-802e-2bca30b697ac_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6940584,
+    "name": "Ром Botafogo White",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/ca684e07-ecd1-4051-b12f-f4585deac6d6_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7089649,
+    "name": "Горілка Кий",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/73f4383c-3b47-4111-872f-1f2ae5ef1c66_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7135187,
+    "name": "Finlandia (кокос) 50 мл",
+    "category": "Карта бару",
+    "price": 96,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7143931,
+    "name": "Коньяк Шато Монтіфо VSOP Преміум",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7145102,
+    "name": "Коньяк Шато Монфіто VS Файн Пті Шампань",
+    "category": "Карта бару",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5087735,
+    "name": "Пампушки",
+    "category": "Випічка",
+    "price": 23,
+    "photo": "https://img.postershop.me/17690/2acdf0fd-4a0a-43a8-9645-0186bcd7420e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6092385,
+    "name": "Хліб",
+    "category": "Випічка",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/83a1caa2-6a2d-4892-88ad-6c49be2b6fa2_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028342,
+    "name": "Сметанка, 30г",
+    "category": "Соуси",
+    "price": 15,
+    "photo": "https://img.postershop.me/17690/aa755bc8-85bc-4392-bc2e-cb774d6c08d7_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5306118,
+    "name": "Гарбузовий джем, 30г",
+    "category": "Соуси",
+    "price": 35,
+    "photo": "https://img.postershop.me/17690/1049466f-58cb-43a0-889c-68ce3926726b_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5306124,
+    "name": "Соус Тартар, 30г",
+    "category": "Соуси",
+    "price": 18,
+    "photo": "https://img.postershop.me/17690/734ade71-6e79-42c9-ad02-653b601a0c7e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5449410,
+    "name": "Соус Барбекю, 30г",
+    "category": "Соуси",
+    "price": 22,
+    "photo": "https://img.postershop.me/17690/4f6435e0-29db-4947-9def-e134cf39bfb9_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5514402,
+    "name": "Гірчичний соус, 30г",
+    "category": "Соуси",
+    "price": 22,
+    "photo": "https://img.postershop.me/17690/88685204-5b2f-4a92-ade1-7749438e02ac_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5731580,
+    "name": "Мед, 30г",
+    "category": "Соуси",
+    "price": 37,
+    "photo": "https://img.postershop.me/17690/5dac71e3-7b46-47d3-9969-2bb2c237a247_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5914660,
+    "name": "Соус Дор Блю, 30г",
+    "category": "Соуси",
+    "price": 30,
+    "photo": "https://img.postershop.me/17690/4d6c20bd-b432-469d-9777-ada70dd0e187_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5689240,
+    "name": "Авокадо",
+    "category": "Доповнення",
+    "price": 70,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5731584,
+    "name": "Масло вершкове",
+    "category": "Доповнення",
+    "price": 37,
+    "photo": "https://img.postershop.me/17690/58cfb197-42e6-4578-9c72-48487bf27d80_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6148859,
+    "name": "Сир Гауда з горіхом",
+    "category": "Доповнення",
+    "price": 72,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7349119,
+    "name": "Яйце куряче",
+    "category": "Доповнення",
+    "price": 34,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7442041,
+    "name": "Оливкова олія, 15гр",
+    "category": "Доповнення",
+    "price": 26,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028296,
+    "name": "Американо з молоком Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/6ed89835-a017-48ac-85a0-926fc48d4e4a_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028304,
+    "name": "Еспресо Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 55,
+    "photo": "https://img.postershop.me/17690/d1d9cce6-ae32-4b5b-8659-baf08809f55f_image.jpeg",
+    "description": "Італійська кава середнього обсмажування",
+    "popular": false
+  },
+  {
+    "id": 5235882,
+    "name": "Подвійний еспресо Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 70,
+    "photo": "https://img.postershop.me/17690/a946584d-1d11-448f-a800-0c51b30ed93a_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028305,
+    "name": "Капучино 250 мл Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/82d1508d-780f-4c20-bcb7-21add67a2d03_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5292613,
+    "name": "Американо Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 60,
+    "photo": "https://img.postershop.me/17690/d5a8599f-055c-4ba5-bf45-4ed789e9817d_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5028313,
+    "name": "Лате Jilius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/bc648a84-6bc7-4fae-89c7-8f51081618e3_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5299282,
+    "name": "Кава без кофеїну Julius Meinl",
+    "category": "Кава Julius Meinl",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/c3031b2b-33df-4ff8-8e81-213ab6c22732_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5336176,
+    "name": "ICE Latte",
+    "category": "Кава Julius Meinl",
+    "price": 85,
+    "photo": "https://img.postershop.me/17690/0724d305-d3c8-4a03-879b-48462678d937_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5336181,
+    "name": "Какао, 250 мл",
+    "category": "Кава Julius Meinl",
+    "price": 70,
+    "photo": "https://img.postershop.me/17690/6507f171-e282-4f61-a423-34e465cbf2a2_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5347419,
+    "name": "Раф кава",
+    "category": "Кава Julius Meinl",
+    "price": 90,
+    "photo": "https://img.postershop.me/17690/6acc9b15-72e5-44ad-803e-c493ca8eb282_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5384886,
+    "name": "Флет-Уайт",
+    "category": "Кава Julius Meinl",
+    "price": 95,
+    "photo": "https://img.postershop.me/17690/48039d3a-1018-488d-971f-bf7e9d97b1c4_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5422086,
+    "name": "Лате Jilius Meinl ,350 мл",
+    "category": "Кава Julius Meinl",
+    "price": 75,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5562814,
+    "name": "Еспресо-тонік",
+    "category": "Кава Julius Meinl",
+    "price": 105,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6037860,
+    "name": "Гарячий шоколад",
+    "category": "Кава Julius Meinl",
+    "price": 74,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6092260,
+    "name": "Гарбузовий латте, 250 мл",
+    "category": "Кава Julius Meinl",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/f41a7e03-6f93-4009-b26c-c33ddc91175b_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6337371,
+    "name": "Сиропи",
+    "category": "Кава Julius Meinl",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/19ef496f-d951-4611-8fa8-6fdee3a858c9_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6634644,
+    "name": "Молоко",
+    "category": "Кава Julius Meinl",
+    "price": 10,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5449230,
+    "name": "Молоко альтернативне",
+    "category": "Кава Julius Meinl",
+    "price": 12,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5336548,
+    "name": "Чай чорний листовий Julius Meinl",
+    "category": "Колекція чаю Julius Meinl",
+    "price": 76,
+    "photo": "https://img.postershop.me/17690/f57df6ea-03a6-4086-a7d3-cf404764b59e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5336553,
+    "name": "Чай зелений листовий Julius Meinl",
+    "category": "Колекція чаю Julius Meinl",
+    "price": 76,
+    "photo": "https://img.postershop.me/17690/eba398e9-b134-485d-b475-be643654e28d_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5958916,
+    "name": "Чай фруктовий/трав\"яний листовий",
+    "category": "Колекція чаю Julius Meinl",
+    "price": 76,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6753335,
+    "name": "Чай в асортименті. Julius Meinl",
+    "category": "Колекція чаю Julius Meinl",
+    "price": 44,
+    "photo": "https://img.postershop.me/17690/8d824b5f-26b7-4257-97e1-5ef79573f4e0_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5562544,
+    "name": "Бамбл",
+    "category": "Авторські чаї та лимонади",
+    "price": 105,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5831214,
+    "name": "Лимонад гранат-полуниця",
+    "category": "Авторські чаї та лимонади",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/d79e912a-f961-4ef2-8a04-4efc6edde4a2_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5831227,
+    "name": "Лимонад ананас-кокос",
+    "category": "Авторські чаї та лимонади",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/3245a312-585c-4d74-bca5-5e5f3bbd080c_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5831232,
+    "name": "Лимонад ананас-грейпфрут",
+    "category": "Авторські чаї та лимонади",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/e32992af-f065-4c48-aaea-c7602a7a2ba3_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5831239,
+    "name": "Лимонад персик-диня",
+    "category": "Авторські чаї та лимонади",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/2b8367e9-7ba5-4c48-9bd6-804f8c18157c_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5837951,
+    "name": "Лимонад манго-маракуя",
+    "category": "Авторські чаї та лимонади",
+    "price": 117,
+    "photo": "https://img.postershop.me/17690/18c47bd2-7456-4cb4-a151-1b5c2147a1f0_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5838101,
+    "name": "Чай смородина-базилік, 300 мл",
+    "category": "Авторські чаї та лимонади",
+    "price": 84,
+    "photo": "https://img.postershop.me/17690/339d413d-f34f-4efb-9fbf-ee33b3a46642_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5838103,
+    "name": "Чай обліпиха, 300 мл",
+    "category": "Авторські чаї та лимонади",
+    "price": 87,
+    "photo": "https://img.postershop.me/17690/86f3e2a0-0283-4f0c-8143-9d4900c69f2b_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5838106,
+    "name": "Чай імбирь-лайм-мед, 300 мл",
+    "category": "Авторські чаї та лимонади",
+    "price": 81,
+    "photo": "https://img.postershop.me/17690/9f112668-9a4a-487a-ab56-b488339a44d5_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5563372,
+    "name": "Швепс-тонік",
+    "category": "Вода/напої",
+    "price": 53,
+    "photo": "https://img.postershop.me/17690/d4f4cac0-eb9a-470d-b031-5d00873886ac_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5602472,
+    "name": "Спрайт 0,5",
+    "category": "Вода/напої",
+    "price": 37,
+    "photo": "https://img.postershop.me/17690/597eac5d-8e48-41c1-ad22-b1fb3d9a6e5e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5602478,
+    "name": "Сік \"КАППІ\" в асортименті",
+    "category": "Вода/напої",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/a44b9b13-0385-4c50-a321-d7b60e6cdb59_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5602482,
+    "name": "Сік \"КАППІ-Томат\" 1 л",
+    "category": "Вода/напої",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/d95e8da9-2eef-481e-9596-a3305841e01a_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5602487,
+    "name": "Кока-кола/спрайт/фанта 0,25 cкло",
+    "category": "Вода/напої",
+    "price": 74,
+    "photo": "https://img.postershop.me/17690/3de6b64b-c9b9-46cc-9588-de996a1e1127_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5823035,
+    "name": "Мінеральна вода \"Моршинська\" слабогазована 0,75 л",
+    "category": "Вода/напої",
+    "price": 44,
+    "photo": "https://img.postershop.me/17690/df9cc5e3-321d-4e8f-87da-2a004558734f_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5823073,
+    "name": "Мінеральна вода \"Моршинська\" 1,5 л",
+    "category": "Вода/напої",
+    "price": 46,
+    "photo": "https://img.postershop.me/17690/9893fd88-b312-4c29-a485-db333c0a8562_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 5978864,
+    "name": "Боржомі скло",
+    "category": "Вода/напої",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/b4fb3dbd-7e20-4de9-ac5e-41885117623e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6014798,
+    "name": "Мінеральна вода \"Моршинська\" Преміум сл/газ",
+    "category": "Вода/напої",
+    "price": 84,
+    "photo": "https://img.postershop.me/17690/f6a4e680-cf41-4242-98ea-a6b28ba62b33_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6014799,
+    "name": "Мінеральна вода \"Моршинська\" Преміум негазована",
+    "category": "Вода/напої",
+    "price": 84,
+    "photo": "https://img.postershop.me/17690/cab91fa0-72d5-4921-bee1-20b558386a25_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6157675,
+    "name": "Боржомі пет",
+    "category": "Вода/напої",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/6eabe34f-d49b-429f-b8e9-6b3bfdd720ea_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7438382,
+    "name": "Смузі Селера+шпинат+яблуко",
+    "category": "Вода/напої",
+    "price": 160,
+    "photo": "https://img.postershop.me/17690/6c760bfb-1b75-4312-9a1e-59e3926c64cf_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7279041,
+    "name": "Деруни з гуакомоле, яйцем пашот і фореллю, 320г",
+    "category": "Загальне",
+    "price": 393,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7279155,
+    "name": "Деруни з гуакомоле, яйцем пашот і креветкою, 290г",
+    "category": "Загальне",
+    "price": 383,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7358188,
+    "name": "Доставлення",
+    "category": "Загальне",
+    "price": 90,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010261,
+    "name": "Пиво Spaten Hell 0,5л",
+    "category": "Пиво",
+    "price": 197,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010267,
+    "name": "Пиво Leffe Brune 0,33л",
+    "category": "Пиво",
+    "price": 164,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010268,
+    "name": "Пиво Hoegaarden 0,33л",
+    "category": "Пиво",
+    "price": 153,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010270,
+    "name": "Пиво Велкопоповицький Козел Темне 0,45л",
+    "category": "Пиво",
+    "price": 94,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010271,
+    "name": "Пиво Corona Extra 0,33л",
+    "category": "Пиво",
+    "price": 157,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7010273,
+    "name": "Пиво Стелла Артуа 0,5л",
+    "category": "Пиво",
+    "price": 124,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7090019,
+    "name": "Пиво Велкопоповицький Козел Світле 0,45л",
+    "category": "Пиво",
+    "price": 97,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7179352,
+    "name": "Пиво Hoegarden б/а 0,33л",
+    "category": "Пиво",
+    "price": 149,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7179362,
+    "name": "Пиво б/а Corona Extra 0,33л",
+    "category": "Пиво",
+    "price": 161,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6797315,
+    "name": "Чай Julius Meinl",
+    "category": "Крамниця МОНТІ 1929",
+    "price": 0,
+    "photo": "https://img.postershop.me/17690/40c9235b-9244-463b-9f95-89491855a06e_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 6824928,
+    "name": "Вина Австрії",
+    "category": "Крамниця МОНТІ 1929",
+    "price": 0,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249553,
+    "name": "Лате JM, 250 мл",
+    "category": "Ресепш Хостел",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/55c33a08-6492-4030-9bcb-d11e42f272b7_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249554,
+    "name": "Капучино 250 мл JM",
+    "category": "Ресепш Хостел",
+    "price": 65,
+    "photo": "https://img.postershop.me/17690/8d8af9ac-d4f0-403a-aa9e-c72a0af90742_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249555,
+    "name": "Кока-кола/спрайт/фанта 0,5",
+    "category": "Ресепш Хостел",
+    "price": 50,
+    "photo": "https://img.postershop.me/17690/ec557115-2393-4e0a-8147-154898166c39_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249556,
+    "name": "Мінеральна вода газована\"Моршинська\" 1,5 л",
+    "category": "Ресепш Хостел",
+    "price": 46,
+    "photo": "https://img.postershop.me/17690/675964e9-94ae-454f-a944-2db780343578_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249559,
+    "name": "Мінеральна вода н/г \"Моршинська\" 1,5 л",
+    "category": "Ресепш Хостел",
+    "price": 44,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249562,
+    "name": "Мінеральна вода \"Моршинська\" с/г 0,75 л",
+    "category": "Ресепш Хостел",
+    "price": 38,
+    "photo": "https://img.postershop.me/17690/1e8fe410-aaf1-449f-89da-9e467bb42174_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249568,
+    "name": "Боржомі 0.33",
+    "category": "Ресепш Хостел",
+    "price": 107,
+    "photo": "https://img.postershop.me/17690/e7d3d472-3608-4b8f-97f0-7223479903ed_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249576,
+    "name": "Американо JM",
+    "category": "Ресепш Хостел",
+    "price": 55,
+    "photo": "https://img.postershop.me/17690/4346c4bf-91b0-494a-a817-f03f7e437cea_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249577,
+    "name": "Американо з молоком JM",
+    "category": "Ресепш Хостел",
+    "price": 60,
+    "photo": "https://img.postershop.me/17690/060e924c-939a-44ac-9663-173124693011_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249746,
+    "name": "Сік \"КАППІ\"",
+    "category": "Ресепш Хостел",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/5f9decc7-2bf5-4a8a-80c0-1afbb6491ced_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7249747,
+    "name": "Сік \"КАППІ-Томат\"",
+    "category": "Ресепш Хостел",
+    "price": 105,
+    "photo": "https://img.postershop.me/17690/c9c384ba-e781-423a-aeba-0487bbd6fbc6_image.jpeg",
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7265999,
+    "name": "Лате JM,350 мл",
+    "category": "Ресепш Хостел",
+    "price": 75,
+    "photo": null,
+    "description": "null",
+    "popular": false
+  },
+  {
+    "id": 7266002,
+    "name": "Подвійний еспресо JM",
+    "category": "Ресепш Хостел",
+    "price": 70,
+    "photo": "https://img.postershop.me/17690/00d47121-89a7-4ec1-8aee-43c46b5c38fe_image.jpeg",
+    "description": "null",
+    "popular": false
+  }
+];
+
+const menuItems = window.menuItems || [];
+
+const categories = ["Усе", ...new Set(menuItems.map((item) => item.category))];
+const state = {
+  category: "Усе",
+  search: "",
+  cart: [],
+};
+
+const categoryBar = document.querySelector("#categoryBar");
+const menuGrid = document.querySelector("#menuGrid");
+const menuCount = document.querySelector("#menuCount");
+const searchInput = document.querySelector("#searchInput");
+const cartList = document.querySelector("#cartList");
+const cartTotal = document.querySelector("#cartTotal");
+const clearCart = document.querySelector("#clearCart");
+
+function formatPrice(price) {
+  return `${price.toLocaleString("uk-UA")} грн`;
+}
+
+function getInitials(name) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+}
+
+function renderCategories() {
+  categoryBar.innerHTML = categories
+    .map(
+      (category) => `
+        <button class="category-btn ${category === state.category ? "active" : ""}"
+          type="button"
+          data-category="${category}">
+          ${category}
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function getFilteredItems() {
+  const term = state.search.trim().toLowerCase();
+
+  return menuItems.filter((item) => {
+    const categoryMatch = state.category === "Усе" || item.category === state.category;
+    const searchMatch =
+      !term ||
+      item.name.toLowerCase().includes(term) ||
+      item.description.toLowerCase().includes(term) ||
+      item.category.toLowerCase().includes(term);
+
+    return categoryMatch && searchMatch;
+  });
+}
+
+function renderMenu() {
+  const items = getFilteredItems();
+  menuCount.textContent = `${items.length} з ${menuItems.length} позицій`;
+
+  if (!items.length) {
+    menuGrid.innerHTML = `<p class="empty-state">Нічого не знайдено. Спробуйте іншу категорію або пошук.</p>`;
+    return;
+  }
+
+  menuGrid.innerHTML = items
+    .map(
+      (item) => `
+        <article class="dish-card ${item.popular ? "featured" : ""}">
+          <div class="dish-media">
+            ${
+              item.photo
+                ? `<img src="${item.photo}" alt="${item.name}" loading="lazy">`
+                : `<div class="dish-placeholder" aria-hidden="true">${getInitials(item.name)}</div>`
+            }
+            <span class="dish-tag">${item.category}</span>
+          </div>
+          <div class="dish-body">
+            <div>
+              <h3>${item.name}</h3>
+              <p>${item.description}</p>
+            </div>
+            <div class="dish-bottom">
+              <span class="price">${formatPrice(item.price)}</span>
+              <button class="add-btn" type="button" data-item="${item.id}" aria-label="Додати ${item.name}">+</button>
+            </div>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+}
+
+function renderCart() {
+  if (!state.cart.length) {
+    cartList.innerHTML = `<p class="empty">Додайте улюблені позиції з меню.</p>`;
+    cartTotal.textContent = formatPrice(0);
+    return;
+  }
+
+  const grouped = state.cart.reduce((items, item) => {
+    const existing = items.find((entry) => entry.name === item.name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      items.push({ ...item, qty: 1 });
+    }
+    return items;
+  }, []);
+
+  cartList.innerHTML = grouped
+    .map(
+      (item) => `
+        <div class="cart-item">
+          <span><strong>${item.qty}×</strong> ${item.name}</span>
+          <strong>${formatPrice(item.price * item.qty)}</strong>
+        </div>
+      `,
+    )
+    .join("");
+
+  const total = state.cart.reduce((sum, item) => sum + item.price, 0);
+  cartTotal.textContent = formatPrice(total);
+}
+
+categoryBar.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-category]");
+  if (!button) return;
+
+  state.category = button.dataset.category;
+  renderCategories();
+  renderMenu();
+});
+
+menuGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-item]");
+  if (!button) return;
+
+  const item = menuItems.find((entry) => String(entry.id) === button.dataset.item);
+  if (!item) return;
+
+  state.cart.push(item);
+  renderCart();
+});
+
+searchInput.addEventListener("input", (event) => {
+  state.search = event.target.value;
+  renderMenu();
+});
+
+clearCart.addEventListener("click", () => {
+  state.cart = [];
+  renderCart();
+});
+
+renderCategories();
+renderMenu();
+renderCart();
+
+</script>
+  </body>
+</html>
